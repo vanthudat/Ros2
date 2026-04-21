@@ -14,10 +14,6 @@ Co san:
 
 ## 1. Chuan bi may moi
 
-```
-
-Neu chua khoi tao `rosdep`:
-
 ```bash
 sudo rosdep init
 rosdep update
