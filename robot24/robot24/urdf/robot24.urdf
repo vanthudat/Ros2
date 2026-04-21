@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com)
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot name="robot24">
+  <link name="base_link">
+    <inertial>
+      <origin
+        xyz="0.0109188013168646 1.76763965926696E-05 0.0997474383551037"
+        rpy="0 0 0" />
+      <mass value="57.45925547021295" />
+      <inertia
+        ixx="1.6184702474608141"
+        ixy="-0.004449612350897379"
+        ixz="-0.00825176958770917"
+        iyy="1.636948768488534"
+        iyz="0.0008457170396251473"
+        izz="3.211471047506535" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://robot24/meshes/base_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0.11"
+        rpy="0 0 0" />
+      <geometry>
+        <box size="0.52 0.52 0.16" />
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="camera_Link">
+    <inertial>
+      <origin
+        xyz="-0.017827234651844 1.33226762955019E-15 -0.00440557041497291"
+        rpy="0 0 0" />
+      <mass value="0.0692728766578711" />
+      <inertia
+        ixx="2.81153880199431E-05"
+        ixy="-5.84452733605467E-20"
+        ixz="-1.87438182530082E-06"
+        iyy="3.00692164744913E-05"
+        iyz="2.68802521422793E-07"
+        izz="2.3756194344505E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://robot24/meshes/camera_Link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="-0.018 0 -0.004"
+        rpy="0 0 0" />
+      <geometry>
+        <box size="0.06 0.04 0.03" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="camera_joint" type="fixed">
+    <origin
+      xyz="0.260955540758793 -0.00383861543085651 0.255"
+      rpy="0 -0.15 -0.018805964092791" />
+    <parent link="base_link" />
+    <child link="camera_Link" />
+    <axis xyz="0 0 0" />
+  </joint>
+
+  <link name="lidar_Link">
+    <inertial>
+      <origin
+        xyz="0.00827758602336659 0.000523122651542973 -0.0212988577769737"
+        rpy="0 0 0" />
+      <mass value="0.146695752132363" />
+      <inertia
+        ixx="6.24606784228344E-05"
+        ixy="-2.98376321795715E-06"
+        ixz="1.8828245822926E-05"
+        iyy="0.000109485431248483"
+        iyz="1.1898978581703E-06"
+        izz="0.000125682524276301" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://robot24/meshes/lidar_Link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0.008 0 -0.021"
+        rpy="0 0 0" />
+      <geometry>
+        <cylinder radius="0.04" length="0.05" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="lidar_joint" type="fixed">
+    <origin
+      xyz="-0.145 0.0 0.205"
+      rpy="0 0 -0.0188059640927907" />
+    <parent link="base_link" />
+    <child link="lidar_Link" />
+    <axis xyz="0 0 0" />
+  </joint>
+
+  <link name="trucquay_Link">
+    <inertial>
+      <origin
+        xyz="0.154006318228365 0.0609154485223448 0.0237433251601207"
+        rpy="0 0 0" />
+      <mass value="1.49567039541735" />
+      <inertia
+        ixx="0.00637042685024106"
+        ixy="-0.0107611576048801"
+        ixz="-0.00206939885340112"
+        iyy="0.0254038294841489"
+        iyz="-0.000888380581578756"
+        izz="0.0304938993256522" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://robot24/meshes/trucquay_Link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0.15 0.06 0.03"
+        rpy="0 0 0" />
+      <geometry>
+        <box size="0.30 0.10 0.08" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="trucquay_joint" type="revolute">
+    <origin
+      xyz="0.210548945807767 -0.0545792259731237 0.401999999999507"
+      rpy="1.5707963267949 0 -0.0188059640927143" />
+    <parent link="base_link" />
+    <child link="trucquay_Link" />
+    <axis xyz="-0.136495638766766 0 0.990640671786523" />
+    <dynamics damping="80" friction="30" />
+    <limit
+      lower="-1"
+      upper="1.57"
+      effort="80"
+      velocity="1.5" />
+  </joint>
+
+  <link name="khautruot_Link">
+    <inertial>
+      <origin
+        xyz="0.00320522880232044 -0.00154175551809077 0.0177906997910464"
+        rpy="0 0 0" />
+      <mass value="1.10519703403352" />
+      <inertia
+        ixx="0.0106719039106667"
+        ixy="-0.000267900879984724"
+        ixz="-0.00440491133942458"
+        iyy="0.0125765300360893"
+        iyz="-0.000607806609524928"
+        izz="0.00261998935052628" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://robot24/meshes/khautruot_Link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0.018"
+        rpy="0 0 0" />
+      <geometry>
+        <box size="0.20 0.08 0.05" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="khautruot_joint" type="prismatic">
+    <origin
+      xyz="0.32199969337712 0.144975876587543 0.0332324662082888"
+      rpy="1.5707963267949 0 0" />
+    <parent link="trucquay_Link" />
+    <child link="khautruot_Link" />
+    <axis xyz="0.402812515773301 0.0555016094226927 0.913598187655752" />
+    <dynamics damping="120" friction="40" />
+    <limit
+      lower="-0.08"
+      upper="0.06"
+      effort="80"
+      velocity="0.5" />
+  </joint>
+
+  <link name="dongco1_Link">
+    <inertial>
+      <origin
+        xyz="-0.04597837974112 -1.4817068523687E-05 8.77825855310488E-05"
+        rpy="0 0 0" />
+      <mass value="2.06131407060818" />
+      <inertia
+        ixx="0.00153201458014351"
+        ixy="8.81104611260512E-07"
+        ixz="-5.22219842929224E-06"
+        iyy="0.00151591785157508"
+        iyz="-2.60447577024441E-07"
+        izz="0.00151741766699433" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://robot24/meshes/dongco1_Link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="-0.046 0 0"
+        rpy="0 1.5707963267949 0" />
+      <geometry>
+        <cylinder radius="0.06" length="0.05" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="dongco1_joint" type="continuous">
+    <origin
+      xyz="0.304722076064442 -0.00465845681972565 -0.0380197213423909"
+      rpy="0 0 -0.0188059640936678" />
+    <parent link="base_link" />
+    <child link="dongco1_Link" />
+    <axis xyz="-1 0 0" />
+    <dynamics damping="8" friction="4" />
+  </joint>
+
+  <link name="dongco2_Link">
+    <inertial>
+      <origin
+        xyz="0.02306587245417 0.0397741515024643 -9.14519100941869E-06"
+        rpy="0 0 0" />
+      <mass value="2.0613144302095" />
+      <inertia
+        ixx="0.00152564941212698"
+        ixy="8.94266900040345E-06"
+        ixz="-4.12275918493878E-07"
+        iyy="0.00152380990914088"
+        iyz="-3.89924771916433E-07"
+        izz="0.00151589083878747" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://robot24/meshes/dongco2_Link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0.023 0.04 0"
+        rpy="0 1.5707963267949 0" />
+      <geometry>
+        <cylinder radius="0.06" length="0.05" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="dongco2_joint" type="continuous">
+    <origin
+      xyz="-0.157098086858932 -0.259817139743274 -0.0379979462003954"
+      rpy="0 0 -0.0188059640936678" />
+    <parent link="base_link" />
+    <child link="dongco2_Link" />
+    <axis xyz="0.499999999999996 0.866025403784441 0" />
+    <dynamics damping="8" friction="4" />
+  </joint>
+
+  <link name="dongco3_Link">
+    <inertial>
+      <origin
+        xyz="0.0229652086695784 -0.0398322847938535 8.46003914638516E-05"
+        rpy="0 0 0" />
+      <mass value="2.06131462080962" />
+      <inertia
+        ixx="0.00151859812616887"
+        ixy="-6.09932996518698E-06"
+        ixz="2.11022123966622E-06"
+        iyy="0.00152944411002124"
+        iyz="-4.59368588987408E-06"
+        izz="0.00151730808376315" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://robot24/meshes/dongco3_Link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0.023 -0.04 0"
+        rpy="0 1.5707963267949 0" />
+      <geometry>
+        <cylinder radius="0.06" length="0.05" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="dongco3_joint" type="continuous">
+    <origin
+      xyz="-0.147153986230263 0.267691595391919 -0.0380190078121073"
+      rpy="0 0 -0.0188059640936678" />
+    <parent link="base_link" />
+    <child link="dongco3_Link" />
+    <axis xyz="0.5 -0.866025403784439 0" />
+    <dynamics damping="8" friction="4" />
+  </joint>
+
+  <gazebo>
+    <plugin
+      name="robot24_arm_controller"
+      filename="libgazebo_ros_joint_pose_trajectory.so">
+      <ros>
+        <namespace>/robot24_arm</namespace>
+        <remapping>set_joint_trajectory:=arm_joint_trajectory</remapping>
+      </ros>
+      <update_rate>20</update_rate>
+    </plugin>
+    <plugin
+      name="robot24_wheel_visual_controller"
+      filename="libgazebo_ros_joint_pose_trajectory.so">
+      <ros>
+        <namespace>/robot24_base</namespace>
+        <remapping>set_joint_trajectory:=wheel_joint_trajectory</remapping>
+      </ros>
+      <update_rate>60</update_rate>
+    </plugin>
+    <plugin
+      name="robot24_planar_move"
+      filename="libgazebo_ros_planar_move.so">
+      <ros>
+        <remapping>cmd_vel:=cmd_vel</remapping>
+        <remapping>odom:=odom</remapping>
+      </ros>
+      <update_rate>100</update_rate>
+      <publish_rate>30</publish_rate>
+      <publish_odom>true</publish_odom>
+      <publish_odom_tf>true</publish_odom_tf>
+      <odometry_frame>odom</odometry_frame>
+      <robot_base_frame>base_link</robot_base_frame>
+      <covariance_x>0.0001</covariance_x>
+      <covariance_y>0.0001</covariance_y>
+      <covariance_yaw>0.01</covariance_yaw>
+    </plugin>
+  </gazebo>
+
+  <gazebo reference="trucquay_Link">
+    <gravity>false</gravity>
+  </gazebo>
+
+  <gazebo reference="khautruot_Link">
+    <gravity>false</gravity>
+  </gazebo>
+
+  <gazebo reference="dongco1_Link">
+    <gravity>false</gravity>
+    <mu1>0.05</mu1>
+    <mu2>0.05</mu2>
+    <slip1>1.0</slip1>
+    <slip2>1.0</slip2>
+    <kp>100000.0</kp>
+    <kd>10.0</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>0.02</maxVel>
+  </gazebo>
+
+  <gazebo reference="dongco2_Link">
+    <gravity>false</gravity>
+    <mu1>0.05</mu1>
+    <mu2>0.05</mu2>
+    <slip1>1.0</slip1>
+    <slip2>1.0</slip2>
+    <kp>100000.0</kp>
+    <kd>10.0</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>0.02</maxVel>
+  </gazebo>
+
+  <gazebo reference="dongco3_Link">
+    <gravity>false</gravity>
+    <mu1>0.05</mu1>
+    <mu2>0.05</mu2>
+    <slip1>1.0</slip1>
+    <slip2>1.0</slip2>
+    <kp>100000.0</kp>
+    <kd>10.0</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>0.02</maxVel>
+  </gazebo>
+
+  <gazebo reference="camera_Link">
+    <sensor type="camera" name="robot24_camera">
+      <always_on>true</always_on>
+      <update_rate>10</update_rate>
+      <visualize>true</visualize>
+      <camera>
+        <horizontal_fov>1.3962634</horizontal_fov>
+        <image>
+          <width>320</width>
+          <height>240</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.05</near>
+          <far>20.0</far>
+        </clip>
+      </camera>
+      <plugin name="robot24_camera_controller" filename="libgazebo_ros_camera.so">
+        <alwaysOn>true</alwaysOn>
+        <updateRate>10.0</updateRate>
+        <cameraName>camera</cameraName>
+        <imageTopicName>image_raw</imageTopicName>
+        <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+        <frameName>camera_Link</frameName>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+  <gazebo reference="lidar_Link">
+    <sensor type="ray" name="robot24_lidar">
+      <always_on>true</always_on>
+      <update_rate>8</update_rate>
+      <visualize>true</visualize>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>360</samples>
+            <resolution>1</resolution>
+            <min_angle>-1.5707963</min_angle>
+            <max_angle>1.5707963</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.12</min>
+          <max>12.0</max>
+          <resolution>0.01</resolution>
+        </range>
+      </ray>
+      <plugin name="robot24_laser_controller" filename="libgazebo_ros_ray_sensor.so">
+        <ros>
+          <remapping>~/out:=scan</remapping>
+        </ros>
+        <output_type>sensor_msgs/LaserScan</output_type>
+        <frame_name>lidar_Link</frame_name>
+      </plugin>
+    </sensor>
+  </gazebo>
+</robot>

@@ -1,0 +1,12 @@
+robot24_base_controller:
+  ros__parameters:
+    publish_rate: 60.0
+    wheel_radius: 0.06
+    robot_radius: 0.305
+    gamma_deg: -1.0773502691896257
+    cmd_vel_timeout: 0.5
+    use_stamped_vel: false
+    wheel_names:
+      - dongco1_joint
+      - dongco2_joint
+      - dongco3_joint
