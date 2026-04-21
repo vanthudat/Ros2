@@ -14,26 +14,6 @@ Co san:
 
 ## 1. Chuan bi may moi
 
-Can co:
-
-- Ubuntu 22.04
-- ROS 2 Humble
-
-Cai cac goi can thiet:
-
-```bash
-sudo apt update
-sudo apt install -y \
-  ros-humble-gazebo-ros-pkgs \
-  ros-humble-gazebo-plugins \
-  ros-humble-robot-state-publisher \
-  ros-humble-rviz2 \
-  ros-humble-joint-state-publisher-gui \
-  ros-humble-tf2-ros \
-  ros-humble-slam-toolbox \
-  ros-humble-turtlebot3-gazebo \
-  python3-colcon-common-extensions \
-  python3-rosdep
 ```
 
 Neu chua khoi tao `rosdep`:
@@ -75,11 +55,13 @@ source ~/ros2_ws/install/setup.bash
 ## 4. Chay robot
 
 Mo terminal 1:
-
 ```bash
+pkill -f gzserver
+pkill -f gzclient
 cd ~/ros2_ws
-source /opt/ros/humble/setup.bash
-source ~/ros2_ws/install/setup.bash
+colcon build --packages-select robot24 --symlink-install
+source install/setup.bash
+export ROS_DOMAIN_ID=24
 ros2 launch robot24 bringup.launch.py
 ```
 
